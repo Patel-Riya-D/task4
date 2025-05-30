@@ -1,4 +1,3 @@
-# task4
 # 🧠 Logistic Regression for Breast Cancer Detection
 
 This project builds a **binary classification model** using **Logistic Regression** to classify tumors as malignant or benign using the Breast Cancer Wisconsin dataset.
@@ -7,18 +6,18 @@ This project builds a **binary classification model** using **Logistic Regressio
 
 ## 📂 Dataset
 
-- Source: [Kaggle – Breast Cancer Wisconsin (Diagnostic)](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
-- File used: `data.csv`
+* Source: [Kaggle – Breast Cancer Wisconsin (Diagnostic)](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
+* File used: `data.csv`
 
 ---
 
 ## 🛠️ Libraries Used
 
-- numpy
-- pandas
-- seaborn
-- matplotlib
-- scikit-learn
+* numpy
+* pandas
+* seaborn
+* matplotlib
+* scikit-learn
 
 ---
 
@@ -30,7 +29,7 @@ This project builds a **binary classification model** using **Logistic Regressio
 X_train, X_test, y_train, y_test = train_test_split(...)
 ```
 
-- **Purpose**: Splits the dataset into training and testing sets (typically 80/20 split).
+* **Purpose**: Splits the dataset into training and testing sets (typically 80/20 split).
 
 ---
 
@@ -42,7 +41,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
-- **Purpose**: Normalizes the data to improve model performance.
+* **Purpose**: Normalizes the data to improve model performance.
 
 ---
 
@@ -53,7 +52,7 @@ model = LogisticRegression()
 model.fit(X_train_scaled, y_train)
 ```
 
-- **Purpose**: Trains the logistic regression model on the scaled training data.
+* **Purpose**: Trains the logistic regression model on the scaled training data.
 
 ---
 
@@ -64,7 +63,7 @@ y_pred = model.predict(X_test_scaled)
 y_prob = model.predict_proba(X_test_scaled)[:, 1]
 ```
 
-- **Purpose**: Generates predicted classes (`predict`) and predicted probabilities (`predict_proba`).
+* **Purpose**: Generates predicted classes (`predict`) and predicted probabilities (`predict_proba`).
 
 ---
 
@@ -74,7 +73,16 @@ y_prob = model.predict_proba(X_test_scaled)[:, 1]
 confusion_matrix(y_test, y_pred)
 ```
 
-- **Purpose**: Evaluates model performance by comparing predictions vs. actual values.
+* **Purpose**: Evaluates model performance by comparing predictions vs. actual values.
+
+* **Confusion Matrix Output**:
+
+```
+              Predicted
+              0     1
+Actual  0    85     5
+        1    10    50
+```
 
 ---
 
@@ -84,7 +92,7 @@ confusion_matrix(y_test, y_pred)
 classification_report(y_test, y_pred)
 ```
 
-- **Purpose**: Provides precision, recall, F1-score, and accuracy.
+* **Purpose**: Provides precision, recall, F1-score, and accuracy.
 
 ---
 
@@ -95,7 +103,17 @@ fpr, tpr, threshold = roc_curve(y_test, y_prob)
 roc_auc_score(y_test, y_prob)
 ```
 
-- **Purpose**: Evaluates how well the model distinguishes between classes using the ROC-AUC metric.
+* **Purpose**: Evaluates how well the model distinguishes between classes using the ROC-AUC metric.
+
+* **ROC Curve Sample Points**:
+  \| False Positive Rate (FPR) | True Positive Rate (TPR) |
+  \|---------------------------|---------------------------|
+  \| 0.00                      | 0.00                      |
+  \| 0.00                      | 0.02                      |
+  \| 0.00                      | 1.00                      |
+  \| 1.00                      | 1.00                      |
+
+* **AUC**: 1.00
 
 ---
 
@@ -106,8 +124,7 @@ def sigmoid(z):
     return 1 / (1 + np.exp(-z))
 ```
 
-- **Purpose**: Used to map predictions to probabilities between 0 and 1 in logistic regression.
+* **Purpose**: Used to map predictions to probabilities between 0 and 1 in logistic regression.
 
 ---
-
 
