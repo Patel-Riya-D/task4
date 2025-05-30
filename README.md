@@ -130,7 +130,27 @@ def sigmoid(z):
     return 1 / (1 + np.exp(-z))
 ```
 
+![image](https://github.com/user-attachments/assets/315fb7f6-c62a-4a54-8a9e-53b13edb9043)
+
+
 * **Purpose**: Used to map predictions to probabilities between 0 and 1 in logistic regression.
+* **sigmoid function**:
+The sigmoid function is a mathematical function used in logistic regression to convert any real number into a value between 0 and 1.
+
+* **Why is it Used in Logistic Regression?**
+
+* In logistic regression, we want to predict the probability that a given input belongs to class 1 (positive class). The sigmoid function does 
+  this by:
+
+* Outputting values close to 1 for large positive inputs
+
+* Outputting values close to 0 for large negative inputs
+
+* So: If σ(z)>0.5: predict class 1
+
+* If σ(z)<0.5: predict class 0
 
 ---
+
+
 
