@@ -106,6 +106,9 @@ fpr, tpr, threshold = roc_curve(y_test, y_prob)
 roc_auc_score(y_test, y_prob)
 ```
 
+![image](https://github.com/user-attachments/assets/238c5c92-d8bb-43e8-9894-e6fdd20950a3)
+
+
 * **Purpose**: Evaluates how well the model distinguishes between classes using the ROC-AUC metric.
 
 * **ROC Curve Sample Points**:
