@@ -73,6 +73,9 @@ y_prob = model.predict_proba(X_test_scaled)[:, 1]
 confusion_matrix(y_test, y_pred)
 ```
 
+![image](https://github.com/user-attachments/assets/924aea15-8199-48cc-8157-f63ed1961193)
+
+
 * **Purpose**: Evaluates model performance by comparing predictions vs. actual values.
 
 * **Confusion Matrix Output**:
